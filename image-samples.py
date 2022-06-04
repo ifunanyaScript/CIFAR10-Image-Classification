@@ -14,13 +14,16 @@ train_loader = DataLoader(train_data, batch_size=4, shuffle=True)
 test_loader = DataLoader(test_data, batch_size=4, shuffle=False)
 
 def imshow(img):
-    img = img / 2 + 0.5
+    img = img / 2 + 0.5 # unnormalize the images
     npimg = img.numpy()
     plt.imshow(np.transpose(img, (1, 2, 0)))
     plt.show()
         
 samples = iter(train_loader)
 images, labels = samples.next()
-imshow(torchvision.utils.make_grid(images))    
+imshow(torchvision.utils.make_grid(images))
+samples1 = iter(test_loader)
+images1, labels1 = samples1.next()
+imshow(torchvision.utils.make_grid(images1))
     
-    
+# ifunanyaScript
