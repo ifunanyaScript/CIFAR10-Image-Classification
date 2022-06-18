@@ -24,6 +24,7 @@ transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5
 train_data = torchvision.datasets.CIFAR10(root='./data', train=True, transform=transform, download=False)
 test_data = torchvision.datasets.CIFAR10(root='./data', train=False, transform=transform, download=False)
 
+# We covert the data chunks(train and test) into smaller batches for training. 
 train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
 test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
 
